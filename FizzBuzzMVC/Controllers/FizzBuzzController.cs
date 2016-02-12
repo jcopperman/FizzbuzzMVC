@@ -8,8 +8,13 @@ namespace FizzBuzzMVC.Controllers
 {
     public class FizzBuzzController : Controller
     {
-        // GET: FizzBuzz
         public ActionResult Index(int value)
+        {
+            FizzBuzzCounter(value);
+            return View();
+        }
+
+        private void FizzBuzzCounter(int value)
         {
             for (int i = 1; i <= value; i++)
             {
@@ -30,7 +35,6 @@ namespace FizzBuzzMVC.Controllers
                     ViewBag.Output += i.ToString() + " ";
                 }
             }
-            return View();
         }
     }
 }
